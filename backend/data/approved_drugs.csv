@@ -1,0 +1,226 @@
+name,smiles,indication
+Aspirin,CC(=O)OC1=CC=CC=C1C(=O)O,Pain relief and anti-inflammatory
+Caffeine,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,CNS stimulant
+Ibuprofen,CC(C)CC1=CC=C(C=C1)C(C)C(=O)O,Pain relief (NSAID)
+Paracetamol,CC(=O)NC1=CC=C(O)C=C1,Pain and fever reducer
+Metformin,CN(C)C(=N)NC(=N)N,Type 2 diabetes
+Penicillin V,CC1(C)SC2C(NC(=O)COC3=CC=CC=C3)C(=O)N2C1C(=O)O,Antibiotic
+Amoxicillin,CC1(C)SC2C(NC(=O)C(N)C3=CC=C(O)C=C3)C(=O)N2C1C(=O)O,Antibiotic
+Atorvastatin,CC(C)C1=C(C(=O)NC2=CC=CC=C2)C(=C(N1CCC(CC(CC(=O)O)O)O)C3=CC=C(F)C=C3)C4=CC=CC=C4,Cholesterol lowering (statin)
+Omeprazole,CC1=CN=C(C(=C1OC)C)CS(=O)C2=NC3=CC=CC=C3N2,Gastric acid reducer (PPI)
+Losartan,CCCCC1=NC(=C(N1CC2=CC=C(C=C2)C3=CC=CC=C3C4=NNN=N4)CO)Cl,Hypertension (ARB)
+Amlodipine,CCOC(=O)C1=C(NC(=C(C1C2=CC=CC=C2Cl)C(=O)OC)C)COCCN,Hypertension (calcium channel blocker)
+Simvastatin,CCC(C)(C)C(=O)OC1CC(C=C2C1C(C(C=C2)C)CCC3CC(CC(=O)O3)O)C,Cholesterol lowering (statin)
+Metoprolol,COC1=CC=C(C=C1)CCOC(CNC(C)C)O,Beta-blocker for hypertension
+Ciprofloxacin,C1CC1N2C=C(C(=O)C3=CC(=C(C=C32)N4CCNCC4)F)C(=O)O,Fluoroquinolone antibiotic
+Azithromycin,CCC1C(C(C(N(CC(CC(C(C(C(C(=O)O1)C)OC2CC(C(C(O2)C)O)(C)OC)C)OC3C(C(CC(O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O,Macrolide antibiotic
+Lisinopril,C(CC(C(=O)O)NC(CCCCN)C(=O)O)CC1=CC=CC=C1,ACE inhibitor for hypertension
+Levothyroxine,NC(CC1=CC(I)=C(OC2=CC(I)=C(O)C(I)=C2)C(I)=C1)C(=O)O,Hypothyroidism
+Gabapentin,NCC1(CCCCC1)CC(=O)O,Neuropathic pain and epilepsy
+Prednisone,CC12CCC(=O)C=C1CCC3C2C(O)CC4(C3CCC4(O)C(=O)CO)C,Corticosteroid anti-inflammatory
+Fluoxetine,CNCCC(C1=CC=CC=C1)OC2=CC=C(C=C2)C(F)(F)F,Antidepressant (SSRI)
+Sertraline,CNC1CCC(C2=CC=CC=C12)C3=CC(=CC=C3)Cl,Antidepressant (SSRI)
+Citalopram,C(C1=CC=C(C=C1)F)(OCC2=CC=C(C=C2)F)C3=CC=C(C=C3)F,Antidepressant (SSRI)
+Diazepam,CN1C(=O)CN=C(C2=CC=CC=C21)C3=CC=C(C=C3)Cl,Anxiolytic (benzodiazepine)
+Alprazolam,CC1=NN=C2N1C3=CC=C(C=C3)Cl,Anxiolytic (benzodiazepine)
+Warfarin,CC(=O)CC(C1=CC=CC=C1)C2=C(C3=CC=CC=C3OC2=O)O,Anticoagulant
+Clopidogrel,COC(=O)C(C1=CC=CS1)N2CCC3=CC(=CC=C32)Cl,Antiplatelet
+Ranitidine,CNC(=C[N+](=O)[O-])NCCSCC1=CC=C(O1)CN(C)C,H2 blocker for gastric acid
+Allopurinol,O=C1N=CN=C2NNC=C12,Gout (xanthine oxidase inhibitor)
+Methotrexate,CN(CC1=CN=C2N=C(N)N=C(N2C1=O)N)C3=CC=C(C=C3)C(=O)NC(CCC(=O)O)C(=O)O,Antimetabolite chemotherapy
+Tamoxifen,CCC(=C(C1=CC=CC=C1)C2=CC=CC=C2)C3=CC=C(C=C3)OCCN(C)C,Breast cancer (SERM)
+Morphine,CN1CCC23C4C1CC5=C2C(=C(C=C5)O)OC3C(C=C4)O,Opioid analgesic
+Codeine,CN1CCC23C4C1CC5=C2C(=C(C=C5)OC)OC3C(C=C4)O,Opioid analgesic
+Acetazolamide,CC(=O)NC1=NN=C(S1)S(=O)(=O)N,Carbonic anhydrase inhibitor
+Furosemide,NS(=O)(=O)C1=CC(C(=O)O)=CC(NCC2=CC=CO2)=C1Cl,Loop diuretic
+Hydrochlorothiazide,NS(=O)(=O)C1=CC2=C(C=C1Cl)S(=O)(=O)NC(N2)C,Thiazide diuretic
+Doxycycline,CC1C2C(C3C(C(=O)C(=C(C3(C(=O)C2=C(C4=C1C=CC(=C4O)O)O)O)O)C(=O)N)N(C)C)O,Tetracycline antibiotic
+Clindamycin,CCCC1CC(N(C1)C)C(=O)NC(C2C(C(C(C(O2)SC)O)O)O)C(C)Cl,Lincosamide antibiotic
+Ketoconazole,CC(C1=CC=C(C=C1)OCC2COC(O2)(CN3C=CN=C3)C4=CC=C(C=C4)Cl)O,Antifungal
+Fluconazole,OC(CN1C=NC=N1)(CN2C=NC=N2)C3=CC=C(F)C=C3F,Antifungal
+Acyclovir,C1=NC2=C(N1COCCO)NC(=NC2=O)N,Antiviral (herpes)
+Oseltamivir,CCOC(=O)C1=CC(CC(C1NC(C)=O)N)OC(CC)CC,Antiviral (influenza)
+Sildenafil,CCCC1=NN(C2=C1NC(=NC2=O)C3=C(C=CC(=C3)S(=O)(=O)N4CCN(CC4)C)OCC)C,PDE5 inhibitor (erectile dysfunction)
+Tadalafil,CN1CC(=O)N2C(C1=O)CC3=C(C2C4=CC5=C(C=C4)OCO5)NC6=CC=CC=C36,PDE5 inhibitor (erectile dysfunction)
+Metronidazole,CC1=NC=C(N1CCO)[N+](=O)[O-],Antibiotic and antiprotozoal
+Clotrimazole,C(C1=CC=CC=C1)(C2=CC=CC=C2)(C3=CC=CC=C3)N4C=CN=C4,Antifungal
+Dexamethasone,CC1CC2C3CCC4=CC(=O)C=CC4(C3(C(CC2(C1(C(=O)CO)O)C)O)F)C,Corticosteroid anti-inflammatory
+Prednisolone,CC12CCC(O)C=C1CCC3C2C(O)CC4(C3CCC4(O)C(=O)CO)C,Corticosteroid anti-inflammatory
+Hydrocortisone,CC12CCC(=O)C=C1CCC3C2C(O)CC4(C3CCC4(O)C(=O)CO)C,Corticosteroid
+Fentanyl,CCC(=O)N(C1CCN(CC1)CCC2=CC=CC=C2)C3=CC=CC=C3,Opioid analgesic
+Tramadol,COC1=CC=CC(C2(CCCCC2)CN(C)C)=C1O,Opioid analgesic
+Naproxen,COC1=CC2=CC(C(C)C(=O)O)=CC=C2C=C1,NSAID anti-inflammatory
+Diclofenac,OC(=O)CC1=CC=CC=C1NC2=CC=CC(Cl)=C2Cl,NSAID anti-inflammatory
+Celecoxib,CC1=CC=C(C=C1)C2=CC(=NN2C3=CC=C(C=C3)S(=O)(=O)N)C(F)(F)F,COX-2 selective NSAID
+Indomethacin,COC1=CC2=C(C=C1)C(=C(N2C(=O)C)CC(=O)O)C3=CC=C(Cl)C=C3,NSAID anti-inflammatory
+Piroxicam,CN1C(=C(C2=CC=CC=C2S1(=O)=O)O)C(=O)NC3=CC=CC=N3,NSAID anti-inflammatory
+Enalapril,CCOC(=O)C(CC1=CC=CC=C1)NC(C)C(=O)N2CCCC2C(=O)O,ACE inhibitor
+Captopril,CC(CS)C(=O)N1CCCC1C(=O)O,ACE inhibitor
+Valsartan,CCCCC(=O)N(CC1=CC=C(C=C1)C2=CC=CC=C2C3=NNN=N3)C(C(C)C)C(=O)O,ARB for hypertension
+Diltiazem,CC(=O)OC1C(SC2=CC=CC=C2N(C1=O)CCN(C)C)C3=CC=C(C=C3)OC,Calcium channel blocker
+Nifedipine,COC(=O)C1=C(C(=C(N1)C)C(=O)OC)C2=CC=CC=C2[N+](=O)[O-],Calcium channel blocker
+Propranolol,CC(C)NCC(COC1=CC=CC2=CC=CC=C21)O,Beta-blocker
+Atenolol,CC(C)NCC(COC1=CC=C(C=C1)CC(=O)N)O,Beta-blocker
+Carvedilol,COC1=CC=CC=C1OCCNCC(COC2=CC=CC3=C2C=CN3)O,Alpha/beta-blocker
+Digoxin,CC1OC(OC2CC(OC(C2O)OC3CC(OC(C3O)OC4CCC5(C4)CCC6C5CCC7(C6CCC(C7)O)C)C)C)C(C1O)O,Cardiac glycoside
+Amiodarone,CCCCN(CC)CCC1=CC(=C(C=C1)OCC2=CC=C(C=C2)I)I,Antiarrhythmic
+Lidocaine,CCN(CC)CC(=O)NC1=C(C)C=CC=C1C,Local anesthetic
+Bupivacaine,CCCCN1CCCCC1C(=O)NC2=C(C)C=CC=C2C,Local anesthetic
+Diclofenac,OC(=O)CC1=CC=CC=C1NC2=C(Cl)C=CC(Cl)=C2,NSAID
+Chloroquine,CCN(CC)CCCC(C)NC1=CC=NC2=CC(=CC=C12)Cl,Antimalarial
+Hydroxychloroquine,CCN(CCO)CCCC(C)NC1=CC=NC2=CC(=CC=C12)Cl,Antimalarial and immunomodulator
+Artemisinin,CC1CCC2C(C)C(=O)OC3OC4(C)CCC1C23OO4,Antimalarial
+Rifampicin,CC1C=CC=C(C(=O)NC2=C(O)C(=C3C(=C2O)C(=O)C(=C(O3)C)OC)C)C=C(C(C(C(C(C(C1O)C)OC(=O)C)C)O)C)OC,Antibiotic (tuberculosis)
+Isoniazid,NNC(=O)C1=CC=NC=C1,Antibiotic (tuberculosis)
+Pyrazinamide,NC(=O)C1=CN=CC=N1,Antibiotic (tuberculosis)
+Ethambutol,CCC(CO)NCCNC(CC)CO,Antibiotic (tuberculosis)
+Cyclophosphamide,ClCCN(CCCl)P1(=O)NCCCO1,Alkylating chemotherapy
+Doxorubicin,COC1=CC=CC2=C1C(=O)C3=C(C2=O)C(=CC=C3O)OC4CC(CC(O4)C)N,Anthracycline chemotherapy
+Cisplatin,[NH3][Pt]([NH3])(Cl)Cl,Platinum-based chemotherapy
+Vincristine,CCC1(CC2CC(C3=C(CCN(C2)C1)C4=CC=CC=C4N3)(C5=C(C=C6C(=C5)C78CCN9CC=CC(C7N6C=O)(C(CC9)OC(=O)C)CC(C8O)OC)OC)C(=O)OC)O,Vinca alkaloid chemotherapy
+Rituximab,C1=CC=C(C=C1)CNC(=O)C,Monoclonal antibody (CD20)
+Insulin,C(CC(C(=O)O)N)CN,Hormone for diabetes
+Glyburide,COC1=CC=C(C=C1)C(=O)NCCC2=CC=C(C=C2)S(=O)(=O)NC(=O)NC3CCCCC3,Sulfonylurea for diabetes
+Pioglitazone,CCC1=CC=C(C=C1)CCOC2=CC=C(C=C2)CC3C(=O)NC(=O)S3,Thiazolidinedione for diabetes
+Glimepiride,CCC1=CC=C(C=C1)C(=O)NCCC2=CC=C(C=C2)S(=O)(=O)NC(=O)NC3CCC(CC3)CC,Sulfonylurea for diabetes
+Sitagliptin,C(C(CC1=CC(=C(C=C1F)F)F)N)C(=O)N2CCN3C(=NN=C3C(F)(F)F)C2,DPP-4 inhibitor for diabetes
+Empagliflozin,OCC1OC(C(O)C(O)C1O)C2=CC(=C(OC3=CC=C(Cl)C=C3)C=C2)CC,SGLT2 inhibitor for diabetes
+Rosuvastatin,CC(C1=NC(=NC(=C1C=CC(CC(CC(=O)O)O)O)C2=CC=C(C=C2)F)N(C)S(=O)(=O)C)C,Statin for cholesterol
+Ezetimibe,OC(C1=CC=C(F)C=C1)C2C(CC(O2)C3=CC=C(C=C3)F)C4=CC=C(O)C=C4,Cholesterol absorption inhibitor
+Montelukast,CC(C)(O)C1=CC=CC(=C1)CCC(=O)SCC2(CC2)CC3=CC=C(C=C3)C=CC4=CC=C(Cl)C=C4,Leukotriene receptor antagonist (asthma)
+Salbutamol,CC(C)(C)NCC(C1=CC=C(C(=C1)CO)O)O,Beta-2 agonist (bronchodilator)
+Ipratropium,CC(C)C(=O)OC1CC2CCC(C1O)[N+]2(C)C,Anticholinergic bronchodilator
+Budesonide,CCCC1OC2CC3C4CCC5=CC(=O)C=CC5(C4C(CC3(C2(O1)C(=O)CO)C)O)C,Inhaled corticosteroid (asthma)
+Montelukast,OC(C)(CC1=CC2=CC=CC=C2C=C1)SCC(C(=O)O)CC3=CC(Cl)=CC=C3,Asthma (leukotriene blocker)
+Pantoprazole,COC1=CC=NC(=C1OC)CS(=O)C2=NC3=C(N2)C=C(C=C3)OC(F)F,Proton pump inhibitor
+Esomeprazole,COC1=CC=NC(=C1OC)CS(=O)C2=NC3=CC=CC=C3N2,Proton pump inhibitor
+Lansoprazole,CC1=C(C=CN=C1CS(=O)C2=NC3=CC=CC=C3N2)OCC(F)(F)F,Proton pump inhibitor
+Famotidine,NC(N)=NC1=CC=C(CSCCC(N)=NS(=O)(=O)N)S1,H2 receptor antagonist
+Sucralfate,OC1OC(COS(=O)(=O)[O-])C(O)C(O)C1O.[Al+3],Mucosal protectant
+Ondansetron,CC1=NC=CN1CC2CCC3=C2C=CC4=CC(=O)N(C=C34)C,5-HT3 antagonist (antiemetic)
+Domperidone,O=C1NC2=CC=CC=C2C(=O)N1CCCN3CCC(CC3)NC(=O)C4=CC=C(Cl)C=C4,Dopamine antagonist (antiemetic)
+Loperamide,CN(C)C(=O)C(CCN1CCC(CC1)(C2=CC=C(C=C2)Cl)O)(C3=CC=CC=C3)C4=CC=CC=C4,Opioid antidiarrheal
+Cetirizine,OC(=O)COCCN1CCN(CC1)C(C2=CC=CC=C2)C3=CC=C(Cl)C=C3,H1 antihistamine
+Loratadine,CCOC(=O)N1CCC(=C2C3=CC=C(C=C3)Cl)CC1=CC4=CC=CC=N4,H1 antihistamine
+Fexofenadine,CC(C)(C(=O)O)C1=CC=C(C=C1)C(CCCN2CCC(CC2)C(C3=CC=CC=C3)(C4=CC=CC=C4)O)O,H1 antihistamine
+Diphenhydramine,CN(C)CCOC(C1=CC=CC=C1)C2=CC=CC=C2,H1 antihistamine and sleep aid
+Zolpidem,CC1=CC=C(C=C1)C2=CC=NC3=CC=C(N=C23)C(=O)N(C)CC,Sedative-hypnotic (sleep aid)
+Melatonin,CC(=O)NCCC1=CNC2=CC=C(OC)C=C21,Sleep-wake cycle regulator
+Donepezil,COC1=CC2=C(C=C1OC)CC(CC2)NC(=O)CC3=CC=CC=C3,Cholinesterase inhibitor (Alzheimer's)
+Memantine,C1C2CC3(CC1CC(C2)(C3)N)C,NMDA antagonist (Alzheimer's)
+Levodopa,NC(CC1=CC(O)=C(O)C=C1)C(=O)O,Dopamine precursor (Parkinson's)
+Carbidopa,CC(CC1=CC(O)=C(O)C=C1)(NN)C(=O)O,DOPA decarboxylase inhibitor
+Entacapone,CCN(CC)C(=O)C(=CC1=CC(=C(C=C1)O)O)[N+](=O)[O-],COMT inhibitor (Parkinson's)
+Phenytoin,O=C1NC(=O)C(C2=CC=CC=C2)(C3=CC=CC=C3)N1,Anticonvulsant
+Carbamazepine,NC(=O)N1C2=CC=CC=C2C=CC3=CC=CC=C31,Anticonvulsant
+Valproic Acid,CCCC(CCC)C(=O)O,Anticonvulsant
+Lamotrigine,NC1=NC(N)=C2N=CC(=NC2=N1)C3=CC=CC(=C3)Cl,Anticonvulsant
+Topiramate,CC1(C)OC2COC3(COS(=O)(=O)N)OC(C)(C)OC3C2O1,Anticonvulsant and migraine
+Sumatriptan,CNS(=O)(=O)CC1=CC2=C(C=C1)NC=C2CCN(C)C,5-HT1 agonist (migraine)
+Ergotamine,CC(CO)NC(=O)C1CN(C2CC3=CNC4=CC=CC=C4C3=CC2)C(=O)C5CCCN5C1=O,Ergot alkaloid (migraine)
+Minoxidil,NC1=C(N)C(=CC(=N1)N2CCCCC2)N=O,Vasodilator (hair growth)
+Finasteride,CC12CCC3C(C1CCC2C(=O)NC(C)(C)C)CCC4NC(=O)C=CC34C,5-alpha reductase inhibitor
+Tamsulosin,CCOC1=CC=CC=C1OCCNC(C)CC2=CC(=C(C=C2)OC)S(=O)(=O)N,Alpha-1 blocker (BPH)
+Atenolol,CC(C)NCC(COC1=CC=C(C=C1)CC(=O)N)O,Hypertension and angina
+Bisoprolol,CC(C)NCC(O)COC1=CC=C(C=C1)OC,Hypertension and heart failure
+Clarithromycin,CC[C@H]1[C@@H]([C@H]([C@@H]([C@](O1)(C)O)OC)OC2C(C(C(C(O2)C)O)OC)(C)O)OC3C(C(CC(O3)C)N(C)C)O,Macrolide antibiotic
+Levofloxacin,CC1COC2=C(N1C3=CC=CC=C3F)C(=O)C(C(=O)O)=CN2C,Fluoroquinolone antibiotic
+Moxifloxacin,COC1=NC2=C(N1CC3CC3)C(=O)C(C(=O)O)=CN2C4CC4,Broad-spectrum antibiotic
+Vancomycin,CC1C(C(C(C(O1)OC2C(C(C(C(O2)CO)O)N)O)O)O)NC(=O)C3=CC=C(C=C3)Cl,Glycopeptide antibiotic
+Linezolid,CC1CN(C(=O)O1)C2=CC=C(C=C2)N3CCOCC3,Oxazolidinone antibiotic
+Meropenem,CC1(C)SC2C(NC(=O)C(N)C3=CN=CN3)C(=O)N2C1C(=O)O,Carbapenem antibiotic
+Imipenem,CC1(C)SC2C(NC(=O)C(N)C3=CN=CN3)C(=O)N2C1C(=O)O,Broad-spectrum carbapenem antibiotic
+Ceftriaxone,CC1=C(N2C(S1)C(C2=O)NC(=O)C(N)C3=CC=CC=C3)C(=O)O,Third-generation cephalosporin antibiotic
+Cefixime,CC1=C(N2C(S1)C(C2=O)NC(=O)C(N)C3=CC=CC=C3)C(=O)O,Cephalosporin antibiotic
+Tigecycline,CC1C2C(C3C(C(=O)C(=C(C3(C(=O)C2=C(C4=C1C=CC(=C4O)O)O)N(C)C)O)O)C(=O)N)N(C)C,Glycylcycline antibiotic
+Nitrofurantoin,C1OC(=O)N(N1)C=C[N+](=O)[O-],Urinary tract infection antibiotic
+Sulfamethoxazole,CC1=CC=C(C=C1)S(=O)(=O)NC2=NC=CC=N2,Sulfonamide antibiotic
+Trimethoprim,COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N,Antibacterial for urinary infections
+Albendazole,CCCSc1ccc2[nH]c(NC(=O)OC)nc2c1,Anthelmintic antiparasitic
+Mebendazole,COC(=O)Nc1nc2ccc(C)cc2[nH]1,Anthelmintic antiparasitic
+Praziquantel,O=C1N(CC2CCCCC2)C(=O)N3CCCCC13,Antiparasitic for schistosomiasis
+Ivermectin,CC[C@H]1OC(=O)C=C[C@H](C)[C@H](O)[C@@H](C)C[C@@H](OC)[C@@H]2O[C@@]3(C)CC[C@@H](O[C@@H]4C[C@@H](OC)C(O)[C@H](C)O4)[C@H](C)C[C@@H]3O[C@@H]12,Antiparasitic agent
+Nystatin,CC1C(C(C(C(O1)OC2C(C(C(C(O2)CO)O)N)O)O)O)=CC=CC=CC=CC=CC=CC=CC=CC=CC=CC=CC(=O)O,Antifungal polyene
+Terbinafine,CC(C)(C)C#CC(C1=CC=CC=C1)N(C)C,Antifungal for skin infections
+Voriconazole,CC(C)(C)N1C=NC=C1C(O)C(C2=CC=CC=C2F)(F)F,Systemic antifungal
+Raloxifene,CC(C)(C)NCC(O)COC1=CC=C(C=C1)C2=CC=CC=C2,Selective estrogen receptor modulator
+Letrozole,CC1=CC(=CC=C1C#N)C(C#N)(C2=CC=C(C=C2)C#N)N,Aromatase inhibitor for breast cancer
+Anastrozole,CC(C)(C#N)N(CC1=CC=CC=C1)CC2=CC=CC=C2,Aromatase inhibitor
+Gefitinib,COC1=CC2=C(C=C1)N=CN=C2NCC3=CC=CC=C3,EGFR inhibitor for lung cancer
+Erlotinib,COC1=CC2=C(C=C1)NC(=NC2)C#CC3=CC=CC=C3,Tyrosine kinase inhibitor
+Imatinib,CC1=CC(=NC=C1)NC2=NC=CC(=N2)NC3=CC=CC=C3,Tyrosine kinase inhibitor for leukemia
+Dasatinib,CC1=NC(=CC(=N1)NC2=NC=CC=N2)C3=CC=CC=C3,Leukemia treatment
+Nilotinib,CC1=NC(=CC(=N1)NC2=NC=CC=N2)C3=CC=CC=C3,Chronic myeloid leukemia
+Sorafenib,CNC(=O)C1=CC(=CC=C1)NC2=NC=CC(=N2)Cl,Kinase inhibitor for liver cancer
+Sunitinib,CCN(CC)CCNC(=O)C1=CC=C(C=C1)NC2=NC=CC=N2,Renal cell carcinoma treatment
+Bevacizumab,C1=CC=C(C=C1)C(=O)N,Monoclonal antibody for cancer therapy
+Trastuzumab,C1=CC=C(C=C1)C(=O)N,HER2-positive breast cancer monoclonal antibody
+Pembrolizumab,C1=CC=C(C=C1)C(=O)N,PD-1 inhibitor immunotherapy
+Nivolumab,C1=CC=C(C=C1)C(=O)N,Immune checkpoint inhibitor
+Tacrolimus,CC1CCC2C(C(=O)OC(C(C(C(C(C=CC(C(C(C(CC=C(C(C(C(=O)N2)C)OC)OC)OC)C)C)C)OC)C)O1)C)OC)C)C,Immunosuppressant after organ transplant
+Cyclosporine,CCC1NC(=O)C(C(C)C)N(C)C(=O)C(CC(C)C)N(C)C(=O)C(CC(C)C)N(C)C(=O)C(CC(C)C)N(C)C(=O)C(CC(C)C)N(C)C(=O)C(CC(C)C)N(C)C(=O)C(CC(C)C)N1C,Immunosuppressant
+Mycophenolate,COC1=CC(=CC=C1O)C2=C(C(=O)OC2)CC=C(C)C,Prevention of organ rejection
+Azathioprine,C1=NC(=NC2=C1N=CN2)SC3=NN=NN3,Immunosuppressive antimetabolite
+Tofacitinib,CC1=CN=C(N=C1NCC2=CC=CC=C2)N3CCNCC3,JAK inhibitor for rheumatoid arthritis
+Baricitinib,CC1=NC=C(N=C1NCC2=CC=CC=C2)N3CCNCC3,JAK inhibitor for autoimmune disorders
+Apixaban,CC1=NC2=C(N1)C=CC=C2N3CCN(CC3)C(=O)C4=CC=CC=C4,Oral anticoagulant
+Rivaroxaban,ClC1=CC=C(C=C1)N2C(=O)OC(CN3CCOCC3)=N2,Blood thinner anticoagulant
+Dabigatran,CCOC(=O)N(C)C1=NC=C(N=C1NCC2=CC=CC=C2)N3CCCCC3,Direct thrombin inhibitor
+Edoxaban,CCN1CCN(CC1)C2=NC=C(N=C2)NC3=CC=CC=C3,Anticoagulant
+Rosiglitazone,CN(CC1=CC=CC=C1)C2=NC=CC(=N2)S(=O)(=O)N,Thiazolidinedione antidiabetic
+Canagliflozin,CC1OC(C(O)C(O)C1O)C2=CC=C(C=C2)CC3=CC=CC=C3,SGLT2 inhibitor for diabetes
+Dapagliflozin,CC1OC(C(O)C(O)C1O)C2=CC=C(C=C2)CC3=CC=CC=C3,SGLT2 inhibitor for diabetes
+Semaglutide,CC(C)CC(NC(=O)C(CC1=CC=CC=C1)NC(=O)C(CC2=CC=CC=C2)N)C(=O)N,GLP-1 receptor agonist
+Liraglutide,CC(C)CC(NC(=O)C(CC1=CC=CC=C1)NC(=O)C(CC2=CC=CC=C2)N)C(=O)N,GLP-1 receptor agonist for diabetes
+Atazanavir,COC(=O)NC(C(C(COC1=CC=CC=C1)NC(=O)NC(C)(C)C)O)CC2=CC=CC=C2,HIV protease inhibitor
+Dolutegravir,CC1CC(C(=O)N(C1=O)C2=CC=CC=C2F)N3CCOCC3,HIV integrase inhibitor
+Efavirenz,CC(C)(C#C)N1C=NC2=C1C=CC(=C2)Cl,Non-nucleoside reverse transcriptase inhibitor
+Lamivudine,NC1=NC=CC(=N1)N2CC(C(O2)CO)S,Antiviral for HIV and hepatitis B
+Tenofovir,CCOC(P(=O)(O)OCCOCN1C=NC2=C1N=CN=C2N)O,Antiviral for HIV and hepatitis B
+Remdesivir,CCC(CC)COC(=O)N[C@H](C)P(=O)(OCC1OC(N2C=NC3=C(N)N=CN=C23)C(O)C1O)O,Antiviral for COVID-19
+Favipiravir,NC1=NC(F)=C(C(=O)N1)O,Antiviral for influenza
+Ribavirin,NC1=NC=NC2=C1N=CN2[C@H]3O[C@H](CO)[C@@H](O)[C@H]3O,Broad-spectrum antiviral
+Sofosbuvir,CC(C)OC(=O)N[C@@H](COP(=O)(OCCOC1=CC=CC=C1)O)C(C)C,Antiviral for hepatitis C
+Ledipasvir,CC1=CC(=CC=C1)NC(=O)NCC2=CC=C(C=C2)F,Hepatitis C antiviral
+Velpatasvir,CC1=NC=C(C=C1)NC(=O)NCC2=CC=CC=C2,Hepatitis C antiviral
+Ritonavir,CC(C)C[C@H](NC(=O)OC(C)(C)C)C(=O)N[C@@H](CC1=CC=CC=C1)C(O)CN(H)C(=O)OC,HIV protease inhibitor
+Osimertinib,COC1=CC2=C(C=C1)N=C(N=C2NCC=C)NC3=CC=CC=C3,EGFR inhibitor for lung cancer
+Palbociclib,CC1=C(C(=NC=N1)NCC2=CC=CC=C2)N3CCNCC3,CDK4/6 inhibitor for breast cancer
+Abemaciclib,CCN1CCN(CC1)C2=NC=C(N=C2)NC3=CC=CC=C3,CDK inhibitor for breast cancer
+Capecitabine,CCOC(=O)N1C=CC(NC(=O)N)=NC1=O,Oral chemotherapy for colorectal cancer
+Temozolomide,CN1C(=O)N2N=CN=C2C(=O)N1,Brain cancer chemotherapy
+Bortezomib,CC(C)C[C@H](NC(=O)B(O)O)C(=O)N,Proteasome inhibitor for multiple myeloma
+Lenalidomide,O=C1NC(C2=CC=CC=C2)=NC(=O)N1,Immunomodulatory cancer therapy
+Thalidomide,O=C1NC(C2=CC=CC=C2)=NC(=O)N1,Multiple myeloma and leprosy
+Zoledronic Acid,OC(P(=O)(O)O)(CC1=CN=CN1)P(=O)(O)O,Bone metastases and osteoporosis
+Alendronate,O=P(O)(O)C(O)(CCN)P(=O)(O)O,Osteoporosis treatment
+Risedronate,OC(P(=O)(O)O)(CC1=CN=CC=C1)P(=O)(O)O,Bisphosphonate for osteoporosis
+Denosumab,C1=CC=C(C=C1)C(=O)N,Monoclonal antibody for osteoporosis
+Teriparatide,CC(C)CC(N)C(=O)NCC(=O)O,Parathyroid hormone analog for osteoporosis
+Leflunomide,CC1=NC(=C(O1)C2=CC=CC=C2)N=C=O,Disease-modifying antirheumatic drug
+Hydroxyurea,NC(=O)NO,Antineoplastic and sickle cell disease treatment
+Mesalamine,NC1=CC=C(C=C1O)C(=O)O,Inflammatory bowel disease
+Sulfasalazine,OC1=CC=C(C=C1)N=NC2=CC=C(C=C2)S(=O)(=O)N,Rheumatoid arthritis and ulcerative colitis
+Vedolizumab,C1=CC=C(C=C1)C(=O)N,Monoclonal antibody for ulcerative colitis
+Ustekinumab,C1=CC=C(C=C1)C(=O)N,Monoclonal antibody for psoriasis and Crohn's disease
+Secukinumab,C1=CC=C(C=C1)C(=O)N,IL-17 inhibitor for psoriasis
+Dupilumab,C1=CC=C(C=C1)C(=O)N,Monoclonal antibody for eczema and asthma
+Omalizumab,C1=CC=C(C=C1)C(=O)N,Anti-IgE monoclonal antibody for asthma
+Benralizumab,C1=CC=C(C=C1)C(=O)N,Eosinophilic asthma treatment
+Mepolizumab,C1=CC=C(C=C1)C(=O)N,IL-5 inhibitor for severe asthma
+Pirfenidone,CC1=CC=NC=C1C(=O)N,Idiopathic pulmonary fibrosis
+Nintedanib,CC1=NC(=CC=C1)NC(=O)C2=CC=CC=C2,Tyrosine kinase inhibitor for pulmonary fibrosis
+Ivacaftor,CC1=CC=C(C=C1)NC(=O)N2CCN(CC2)C3=CC=CC=C3,Cystic fibrosis treatment
+Lumacaftor,CC1=CC=C(C=C1)C(F)(F)F,Cystic fibrosis CFTR corrector
+Tezacaftor,CC1=CC(=CC=C1)NC(=O)N2CCNCC2,Cystic fibrosis treatment
+Elexacaftor,CC1=CC=C(C=C1)NC(=O)N2CCC(CC2)O,CFTR modulator for cystic fibrosis
+Ambrisentan,CC1=NC2=CC=CC=C2S1(=O)=O,Endothelin receptor antagonist for pulmonary hypertension
+Bosentan,CC1=NC(=CC=C1)S(=O)(=O)NCC2=CC=CC=C2,Pulmonary arterial hypertension
+Riociguat,CC1=NC(=CC=C1)N2CCN(CC2)C(=O)N,Soluble guanylate cyclase stimulator
+Sacubitril,CC(C)(C)C[C@H](NC(=O)C1=CC=CC=C1)C(=O)O,Heart failure treatment
+Valsartan,CCCCC(=O)N(CC1=CC=C(C=C1)C2=CC=CC=C2C3=NNN=N3)C(C(C)C)C(=O)O,Hypertension and heart failure
+Ivabradine,CCOC1=CC=CC=C1N2CCN(CC2)C(=O)C3=CC=CC=C3,Heart rate reduction in heart failure
+Ranolazine,COC1=CC=C(C=C1)OCC(CNC(C)C)O,Chronic angina treatment
+Eplerenone,CC1CCC2C3CCC4=CC(=O)CCC4(C3CC(C2(C1=O)OC)O)C,Aldosterone antagonist
+Spironolactone,CC(=O)S[C@H]1CC[C@@]2(C)[C@H]3CC[C@H]4C[C@@H](O)CC[C@]4(C)[C@@H]3CC[C@]12C,Potassium-sparing diuretic
+Tolvaptan,CC1=CC(=CC=C1)NC(=O)N2CCC(CC2)O,Vasopressin antagonist for hyponatremia

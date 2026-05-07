@@ -4,9 +4,11 @@ const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 const api = axios.create({
   baseURL: API_BASE,
-  timeout: 30000,
+  timeout: 60000,
   headers: { 'Content-Type': 'application/json' },
 });
+
+// ── Predictions ──────────────────────────────────────────────────
 
 export async function predictMolecule(smiles) {
   const { data } = await api.post('/predict', { smiles });
@@ -18,10 +20,14 @@ export async function predictBatch(smilesList) {
   return data;
 }
 
+// ── Molecule Info ────────────────────────────────────────────────
+
 export async function getMoleculeInfo(smiles) {
   const { data } = await api.post('/molecule-info', { smiles });
   return data;
 }
+
+// ── Dataset Upload & Training ────────────────────────────────────
 
 export async function uploadDataset(file) {
   const formData = new FormData();
@@ -41,6 +47,8 @@ export async function trainModel(datasetId, modelType = 'xgboost', targetColumn 
   });
   return data;
 }
+
+// ── History & Export ─────────────────────────────────────────────
 
 export async function getHistory(limit = 50, offset = 0) {
   const { data } = await api.get('/history', { params: { limit, offset } });
@@ -62,6 +70,52 @@ export async function exportHistory(format = 'csv') {
   link.click();
   link.remove();
   window.URL.revokeObjectURL(url);
+}
+
+// ── Similarity Search ────────────────────────────────────────────
+
+export async function searchSimilar(smiles, topK = 10, minSimilarity = 0.1) {
+  const { data } = await api.post('/similarity', {
+    smiles,
+    top_k: topK,
+    min_similarity: minSimilarity,
+  });
+  return data;
+}
+
+// ── Model Information ────────────────────────────────────────────
+
+export async function getModels() {
+  const { data } = await api.get('/models');
+  return data;
+}
+
+export async function getModelMetrics(modelId) {
+  const { data } = await api.get(`/models/${modelId}`);
+  return data;
+}
+
+export async function getTrainingReport() {
+  const { data } = await api.get('/models/report/training');
+  return data;
+}
+
+// ── AI Chat ──────────────────────────────────────────────────────
+
+export async function chatWithAI(message, contextSmiles = null, history = []) {
+  const { data } = await api.post('/chat', {
+    message,
+    context_smiles: contextSmiles,
+    history,
+  });
+  return data;
+}
+
+// ── Health Check ─────────────────────────────────────────────────
+
+export async function healthCheck() {
+  const { data } = await api.get('/health');
+  return data;
 }
 
 export default api;

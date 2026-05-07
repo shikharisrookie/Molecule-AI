@@ -1,12 +1,26 @@
-fastapi
-uvicorn[standard]
-rdkit
-xgboost
-scikit-learn
-pandas
-numpy
-joblib
-python-multipart
-sqlalchemy
-pydantic
-aiofiles
+# === Core Web Framework ===
+fastapi==0.115.0
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+pydantic==2.11.3
+aiofiles==24.1.0
+
+# === Database ===
+sqlalchemy==2.0.41
+
+# === Chemistry ===
+rdkit-pypi==2024.3.6
+
+# === Machine Learning ===
+xgboost==2.1.4
+scikit-learn==1.6.1
+pandas==2.2.3
+numpy==2.2.6
+joblib==1.5.0
+
+# === LLM Integration ===
+openai==2.34.0
+httpx==0.28.1
+
+# === Server (production) ===
+gunicorn==23.0.0

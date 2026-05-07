@@ -8,6 +8,8 @@ const navLinks = [
   { to: '/analyze', label: 'Analyze' },
   { to: '/dashboard', label: 'Dashboard' },
   { to: '/visualize', label: '3D Viewer' },
+  { to: '/similarity', label: 'Similarity' },
+  { to: '/chat', label: 'AI Chat' },
   { to: '/about', label: 'About' },
 ];
 

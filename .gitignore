@@ -1,0 +1,51 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# === Virtual Environment ===
+.venv/
+venv/
+env/
+
+# === IDE ===
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# === OS ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === Database (local only) ===
+*.db
+
+# === Environment ===
+.env
+.env.local
+.env.production
+
+# === Uploads (user data) ===
+backend/data/uploads/*
+!backend/data/uploads/.gitkeep
+
+# === DeepChem cached datasets (large, re-downloadable) ===
+backend/data/datasets/bbbp/
+backend/data/datasets/tox21/
+backend/data/datasets/esol/
+backend/data/datasets/bace/
+
+# === Node ===
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# === Logs ===
+*.log
+npm-debug.log*

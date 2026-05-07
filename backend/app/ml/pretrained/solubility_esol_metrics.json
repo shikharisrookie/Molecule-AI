@@ -1,0 +1,14 @@
+{
+  "rmse": 0.8941,
+  "mae": 0.6622,
+  "r2": 0.8434,
+  "train_samples": 903,
+  "test_samples": 225,
+  "failed_molecules": 0,
+  "total_molecules": 1128,
+  "task_type": "regression",
+  "model_type": "xgboost",
+  "model_id": "solubility_esol",
+  "trained_at": "2026-05-06T11:57:38.301599",
+  "use_scaffold_split": true
+}

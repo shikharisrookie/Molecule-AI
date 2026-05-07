@@ -6,6 +6,8 @@ import HomePage from './pages/HomePage';
 import MoleculeInputPage from './pages/MoleculeInputPage';
 import PredictionDashboard from './pages/PredictionDashboard';
 import VisualizationPage from './pages/VisualizationPage';
+import SimilarityPage from './pages/SimilarityPage';
+import ChatPage from './pages/ChatPage';
 import AboutPage from './pages/AboutPage';
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
               <Route path="/analyze" element={<MoleculeInputPage />} />
               <Route path="/dashboard" element={<PredictionDashboard />} />
               <Route path="/visualize" element={<VisualizationPage />} />
+              <Route path="/similarity" element={<SimilarityPage />} />
+              <Route path="/chat" element={<ChatPage />} />
               <Route path="/about" element={<AboutPage />} />
             </Routes>
           </main>

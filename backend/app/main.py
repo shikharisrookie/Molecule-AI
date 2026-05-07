@@ -2,6 +2,7 @@
 import json
 import csv
 import io
+import logging
 from fastapi import FastAPI, Depends, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
@@ -9,7 +10,10 @@ from sqlalchemy.orm import Session
 from app.config import ALLOWED_ORIGINS
 from app.db.database import init_db, get_db
 from app.db.models import PredictionHistory
-from app.routers import predict, molecule, upload, train
+from app.routers import predict, molecule, upload, train, similarity, model_info, chat
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # ─── App Setup ────────────────────────────────────────────────────
 
@@ -17,10 +21,10 @@ app = FastAPI(
     title="MoleculeAI API",
     description=(
         "AI-powered drug discovery platform API. "
-        "Predict drug-likeness, toxicity, and biological activity of molecules "
-        "using machine learning models trained on molecular fingerprints."
+        "Predict drug-likeness, toxicity, solubility, and biological activity of molecules "
+        "using multi-model ML pipeline trained on MoleculeNet benchmarks."
     ),
-    version="1.0.0",
+    version="2.0.0",
     docs_url="/docs",
     redoc_url="/redoc",
 )
@@ -39,11 +43,18 @@ app.add_middleware(
 
 @app.on_event("startup")
 async def startup():
-    """Initialize database and load models on startup."""
+    """Initialize database and load all production models on startup."""
     init_db()
-    # Pre-load the default model (if it exists)
-    from app.services.ml_service import get_model
-    get_model("default")
+
+    # Load all production models into cache
+    from app.services.ml_service import load_all_production_models
+    loaded = load_all_production_models()
+    logger.info(f"Startup complete: {len(loaded)} models loaded")
+
+    # Pre-load similarity search library
+    from app.services.similarity_service import get_drug_library
+    drugs = get_drug_library()
+    logger.info(f"Similarity library: {len(drugs)} approved drugs loaded")
 
 
 # ─── Mount Routers ────────────────────────────────────────────────
@@ -52,6 +63,9 @@ app.include_router(predict.router)
 app.include_router(molecule.router)
 app.include_router(upload.router)
 app.include_router(train.router)
+app.include_router(similarity.router)
+app.include_router(model_info.router)
+app.include_router(chat.router)
 
 
 # ─── Additional Endpoints ─────────────────────────────────────────
@@ -62,8 +76,25 @@ async def root():
     return {
         "status": "online",
         "app": "MoleculeAI API",
-        "version": "1.0.0",
+        "version": "2.0.0",
         "docs": "/docs",
+    }
+
+
+@app.get("/health", tags=["Health"])
+async def health_check():
+    """Detailed health check with model status."""
+    from app.services.ml_service import get_model, PRODUCTION_MODELS
+
+    model_status = {}
+    for model_id in PRODUCTION_MODELS:
+        model_status[model_id] = "loaded" if get_model(model_id) is not None else "not loaded"
+
+    return {
+        "status": "healthy",
+        "models": model_status,
+        "models_loaded": sum(1 for s in model_status.values() if s == "loaded"),
+        "total_models": len(PRODUCTION_MODELS),
     }
 
 

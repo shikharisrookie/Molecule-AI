@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend, Tooltip as RechartTooltip, Cell } from 'recharts';
-import { ArrowLeft, Eye, Download, CheckCircle, AlertTriangle, XCircle, FlaskConical, Atom, TrendingUp, ShieldAlert, Info } from 'lucide-react';
+import { ArrowLeft, Eye, Download, CheckCircle, AlertTriangle, XCircle, FlaskConical, Atom, TrendingUp, ShieldAlert, Info, Droplets, Brain, Search, Shield, Beaker } from 'lucide-react';
 import Tooltip from '../components/UI/Tooltip';
-import { getMoleculeInfo, exportHistory } from '../utils/api';
+import { getMoleculeInfo, exportHistory, searchSimilar } from '../utils/api';
 
 const PROPERTY_EXPLANATIONS = {
   molecular_weight: "The mass of the molecule. Most successful drugs weigh less than 500 g/mol.",
@@ -70,6 +70,7 @@ export default function PredictionDashboard() {
   const navigate = useNavigate();
   const [prediction, setPrediction] = useState(null);
   const [moleculeInfo, setMoleculeInfo] = useState(null);
+  const [similarDrugs, setSimilarDrugs] = useState([]);
 
   useEffect(() => {
     const stored = sessionStorage.getItem('predictionResult');
@@ -79,6 +80,10 @@ export default function PredictionDashboard() {
       // Also fetch molecule info for 3D viewer
       getMoleculeInfo(p.canonical_smiles || p.smiles).then(data => {
         if (data.success) setMoleculeInfo(data);
+      }).catch(() => {});
+      // Fetch similar drugs
+      searchSimilar(p.canonical_smiles || p.smiles, 5).then(data => {
+        if (data.success) setSimilarDrugs(data.similar_molecules || []);
       }).catch(() => {});
     }
   }, []);
@@ -155,6 +160,15 @@ export default function PredictionDashboard() {
             <code className="text-sm font-mono text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/30 px-3 py-1 rounded-lg break-all">
               {prediction.canonical_smiles}
             </code>
+            {prediction.confidence != null && (
+              <span className={`ml-auto text-xs font-medium px-2 py-1 rounded-full ${
+                prediction.confidence >= 0.75 ? 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300' :
+                prediction.confidence >= 0.5 ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300' :
+                'bg-surface-100 dark:bg-surface-800 text-surface-600 dark:text-surface-400'
+              }`}>
+                Model confidence: {(prediction.confidence * 100).toFixed(0)}%
+              </span>
+            )}
           </div>
         </div>
 
@@ -182,6 +196,105 @@ export default function PredictionDashboard() {
             <p className="text-xs text-surface-500 dark:text-surface-400 mt-2">Probability of biological activity</p>
           </div>
         </div>
+
+        {/* NEW: Extended Predictions Row */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          {/* BBB Penetration */}
+          {prediction.bbb_penetration != null && (
+            <div className="card py-4">
+              <div className="flex items-center gap-2 mb-2">
+                <Brain className="w-4 h-4 text-indigo-500" />
+                <span className="text-sm font-bold text-surface-900 dark:text-surface-100">BBB Penetration</span>
+              </div>
+              <div className="text-2xl font-bold text-surface-900 dark:text-surface-100">
+                {(prediction.bbb_penetration * 100).toFixed(0)}%
+              </div>
+              <p className="text-xs text-surface-500 dark:text-surface-400 mt-1">
+                {prediction.bbb_penetration >= 0.7 ? 'Likely crosses blood-brain barrier' :
+                 prediction.bbb_penetration >= 0.4 ? 'Uncertain BBB penetration' :
+                 'Unlikely to cross BBB'}
+              </p>
+            </div>
+          )}
+
+          {/* Solubility */}
+          {prediction.solubility && (
+            <div className="card py-4">
+              <div className="flex items-center gap-2 mb-2">
+                <Droplets className="w-4 h-4 text-blue-500" />
+                <span className="text-sm font-bold text-surface-900 dark:text-surface-100">Solubility</span>
+              </div>
+              <div className="text-2xl font-bold text-surface-900 dark:text-surface-100">
+                {prediction.solubility.log_s?.toFixed(2)}
+                <span className="text-sm font-normal text-surface-400 ml-1">logS</span>
+              </div>
+              <span className={`inline-block mt-1 text-xs font-medium px-2 py-0.5 rounded-full ${
+                prediction.solubility.category === 'Very Soluble' || prediction.solubility.category === 'Soluble'
+                  ? 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300'
+                  : prediction.solubility.category === 'Moderately Soluble'
+                  ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'
+                  : 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300'
+              }`}>
+                {prediction.solubility.category}
+              </span>
+            </div>
+          )}
+
+          {/* BACE Inhibition */}
+          {prediction.bace_inhibition != null && (
+            <div className="card py-4">
+              <div className="flex items-center gap-2 mb-2">
+                <Beaker className="w-4 h-4 text-violet-500" />
+                <span className="text-sm font-bold text-surface-900 dark:text-surface-100">BACE-1 Inhibition</span>
+              </div>
+              <div className="text-2xl font-bold text-surface-900 dark:text-surface-100">
+                {(prediction.bace_inhibition * 100).toFixed(0)}%
+              </div>
+              <p className="text-xs text-surface-500 dark:text-surface-400 mt-1">
+                Alzheimer's target (β-secretase)
+              </p>
+            </div>
+          )}
+        </div>
+
+        {/* NEW: Toxicity Profile (Tox21) */}
+        {prediction.toxicity_profile && Object.keys(prediction.toxicity_profile.endpoint_scores || {}).length > 0 && (
+          <div className="card mb-8">
+            <h3 className="text-sm font-bold text-surface-900 dark:text-surface-100 mb-4 flex items-center gap-2">
+              <Shield className="w-4 h-4 text-rose-500" /> Toxicity Profile (Tox21 — 12 Endpoints)
+            </h3>
+            {prediction.toxicity_profile.high_risk_endpoints?.length > 0 && (
+              <div className="mb-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl text-sm text-red-700 dark:text-red-300">
+                ⚠️ High-risk endpoints: {prediction.toxicity_profile.high_risk_endpoints.join(', ')}
+              </div>
+            )}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+              {Object.entries(prediction.toxicity_profile.endpoint_scores).map(([endpoint, score]) => (
+                <div key={endpoint} className={`p-3 rounded-lg border ${
+                  score > 0.5 ? 'bg-red-50 dark:bg-red-900/10 border-red-200 dark:border-red-800' :
+                  score > 0.3 ? 'bg-amber-50 dark:bg-amber-900/10 border-amber-200 dark:border-amber-800' :
+                  'bg-emerald-50 dark:bg-emerald-900/10 border-emerald-200 dark:border-emerald-800'
+                }`}>
+                  <div className="text-xs font-medium text-surface-600 dark:text-surface-400 mb-1 truncate" title={endpoint}>
+                    {endpoint}
+                  </div>
+                  <div className={`text-lg font-bold ${
+                    score > 0.5 ? 'text-red-600 dark:text-red-400' :
+                    score > 0.3 ? 'text-amber-600 dark:text-amber-400' :
+                    'text-emerald-600 dark:text-emerald-400'
+                  }`}>
+                    {(score * 100).toFixed(0)}%
+                  </div>
+                  <div className="w-full bg-surface-200 dark:bg-surface-700 rounded-full h-1 mt-1">
+                    <div className={`h-1 rounded-full ${
+                      score > 0.5 ? 'bg-red-500' : score > 0.3 ? 'bg-amber-500' : 'bg-emerald-500'
+                    }`} style={{ width: `${score * 100}%` }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Tips */}
         {prediction.tips && prediction.tips.length > 0 && (
@@ -245,8 +358,35 @@ export default function PredictionDashboard() {
           </div>
         </div>
 
+        {/* Similar Drugs */}
+        {similarDrugs.length > 0 && (
+          <div className="card mb-8">
+            <h3 className="text-sm font-bold text-surface-900 dark:text-surface-100 mb-4 flex items-center gap-2">
+              <Search className="w-4 h-4 text-teal-500" /> Similar Approved Drugs
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+              {similarDrugs.slice(0, 6).map((drug, i) => (
+                <div key={i} className="p-3 rounded-xl bg-surface-50 dark:bg-surface-800/50 border border-surface-200 dark:border-surface-700">
+                  <div className="flex justify-between items-start">
+                    <span className="font-semibold text-sm text-surface-900 dark:text-surface-100">{drug.name}</span>
+                    <span className={`text-sm font-bold ${
+                      drug.similarity >= 0.5 ? 'text-emerald-600 dark:text-emerald-400' : 'text-surface-500'
+                    }`}>
+                      {(drug.similarity * 100).toFixed(0)}%
+                    </span>
+                  </div>
+                  <p className="text-xs text-surface-500 dark:text-surface-400 mt-1">{drug.indication}</p>
+                </div>
+              ))}
+            </div>
+            <Link to="/similarity" className="inline-flex items-center gap-1 text-sm text-primary-600 dark:text-primary-400 hover:underline mt-3">
+              View all similar drugs →
+            </Link>
+          </div>
+        )}
+
         {/* Properties Table */}
-        <div className="card">
+        <div className="card mb-6">
           <h3 className="text-sm font-bold text-surface-900 dark:text-surface-100 mb-4 flex items-center gap-2">
             <ShieldAlert className="w-4 h-4 text-accent-500" /> Molecular Properties
           </h3>
@@ -282,9 +422,25 @@ export default function PredictionDashboard() {
           </div>
         </div>
 
+        {/* Model Versions */}
+        {prediction.model_versions && Object.keys(prediction.model_versions).length > 0 && (
+          <div className="card mb-6">
+            <h3 className="text-xs font-bold text-surface-500 dark:text-surface-400 mb-3 uppercase tracking-wider">
+              Models Used
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {Object.entries(prediction.model_versions).map(([key, value]) => (
+                <span key={key} className="text-xs px-2 py-1 rounded-full bg-surface-100 dark:bg-surface-800 text-surface-600 dark:text-surface-400">
+                  {key}: {value}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* 2D Structure Preview */}
         {moleculeInfo?.svg_2d && (
-          <div className="card mt-6">
+          <div className="card">
             <h3 className="text-sm font-bold text-surface-900 dark:text-surface-100 mb-4">2D Structure</h3>
             <div className="flex justify-center bg-white rounded-xl p-4" dangerouslySetInnerHTML={{ __html: moleculeInfo.svg_2d }} />
           </div>

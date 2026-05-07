@@ -1,0 +1,16 @@
+{
+  "accuracy": 0.8278,
+  "precision": 0.775,
+  "recall": 0.7881,
+  "f1_score": 0.7815,
+  "roc_auc": 0.8763,
+  "train_samples": 1211,
+  "test_samples": 302,
+  "failed_molecules": 0,
+  "total_molecules": 1513,
+  "task_type": "classification",
+  "model_type": "xgboost",
+  "model_id": "activity_bace",
+  "trained_at": "2026-05-06T11:57:44.293664",
+  "use_scaffold_split": true
+}

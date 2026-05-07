@@ -1,0 +1,165 @@
+{
+  "started_at": "2026-05-06T11:56:41.990216+00:00",
+  "models": {
+    "activity_bbbp": {
+      "accuracy": 0.8821,
+      "precision": 0.8757,
+      "recall": 0.9838,
+      "f1_score": 0.9266,
+      "roc_auc": 0.9174,
+      "train_samples": 1632,
+      "test_samples": 407,
+      "failed_molecules": 11,
+      "total_molecules": 2050,
+      "task_type": "classification",
+      "model_type": "xgboost",
+      "model_id": "activity_bbbp",
+      "trained_at": "2026-05-06T11:56:48.497251",
+      "use_scaffold_split": true
+    },
+    "toxicity_tox21": {
+      "model_id": "toxicity_tox21",
+      "model_type": "xgboost",
+      "task_type": "multilabel_classification",
+      "n_endpoints": 12,
+      "n_trained": 12,
+      "mean_roc_auc": 0.848,
+      "total_molecules": 7831,
+      "failed_molecules": 8,
+      "trained_at": "2026-05-06T11:57:35.497753",
+      "endpoint_metrics": {
+        "NR-AR": {
+          "accuracy": 0.9704,
+          "roc_auc": 0.7478,
+          "f1_score": 0.5275,
+          "train_samples": 5806,
+          "test_samples": 1452,
+          "positive_rate": 0.0424
+        },
+        "NR-AR-LBD": {
+          "accuracy": 0.9822,
+          "roc_auc": 0.8908,
+          "f1_score": 0.6923,
+          "train_samples": 5400,
+          "test_samples": 1351,
+          "positive_rate": 0.0351
+        },
+        "NR-AhR": {
+          "accuracy": 0.9183,
+          "roc_auc": 0.902,
+          "f1_score": 0.5837,
+          "train_samples": 5233,
+          "test_samples": 1309,
+          "positive_rate": 0.1174
+        },
+        "NR-Aromatase": {
+          "accuracy": 0.9596,
+          "roc_auc": 0.8697,
+          "f1_score": 0.4198,
+          "train_samples": 4652,
+          "test_samples": 1163,
+          "positive_rate": 0.0516
+        },
+        "NR-ER": {
+          "accuracy": 0.8934,
+          "roc_auc": 0.7306,
+          "f1_score": 0.3592,
+          "train_samples": 4948,
+          "test_samples": 1238,
+          "positive_rate": 0.1279
+        },
+        "NR-ER-LBD": {
+          "accuracy": 0.9626,
+          "roc_auc": 0.8404,
+          "f1_score": 0.5094,
+          "train_samples": 5558,
+          "test_samples": 1390,
+          "positive_rate": 0.0502
+        },
+        "NR-PPAR-gamma": {
+          "accuracy": 0.9721,
+          "roc_auc": 0.8447,
+          "f1_score": 0.1,
+          "train_samples": 5154,
+          "test_samples": 1289,
+          "positive_rate": 0.0289
+        },
+        "SR-ARE": {
+          "accuracy": 0.879,
+          "roc_auc": 0.8486,
+          "f1_score": 0.5155,
+          "train_samples": 4660,
+          "test_samples": 1165,
+          "positive_rate": 0.1617
+        },
+        "SR-ATAD5": {
+          "accuracy": 0.966,
+          "roc_auc": 0.8993,
+          "f1_score": 0.2,
+          "train_samples": 5652,
+          "test_samples": 1413,
+          "positive_rate": 0.0374
+        },
+        "SR-HSE": {
+          "accuracy": 0.9505,
+          "roc_auc": 0.8041,
+          "f1_score": 0.2889,
+          "train_samples": 5168,
+          "test_samples": 1292,
+          "positive_rate": 0.0576
+        },
+        "SR-MMP": {
+          "accuracy": 0.9044,
+          "roc_auc": 0.9242,
+          "f1_score": 0.6312,
+          "train_samples": 4643,
+          "test_samples": 1161,
+          "positive_rate": 0.1582
+        },
+        "SR-p53": {
+          "accuracy": 0.9431,
+          "roc_auc": 0.8741,
+          "f1_score": 0.2936,
+          "train_samples": 5413,
+          "test_samples": 1354,
+          "positive_rate": 0.0625
+        }
+      }
+    },
+    "solubility_esol": {
+      "rmse": 0.8941,
+      "mae": 0.6622,
+      "r2": 0.8434,
+      "train_samples": 903,
+      "test_samples": 225,
+      "failed_molecules": 0,
+      "total_molecules": 1128,
+      "task_type": "regression",
+      "model_type": "xgboost",
+      "model_id": "solubility_esol",
+      "trained_at": "2026-05-06T11:57:38.301599",
+      "use_scaffold_split": true
+    },
+    "activity_bace": {
+      "accuracy": 0.8278,
+      "precision": 0.775,
+      "recall": 0.7881,
+      "f1_score": 0.7815,
+      "roc_auc": 0.8763,
+      "train_samples": 1211,
+      "test_samples": 302,
+      "failed_molecules": 0,
+      "total_molecules": 1513,
+      "task_type": "classification",
+      "model_type": "xgboost",
+      "model_id": "activity_bace",
+      "trained_at": "2026-05-06T11:57:44.293664",
+      "use_scaffold_split": true
+    }
+  },
+  "errors": [],
+  "completed_at": "2026-05-06T11:57:44.302997+00:00",
+  "total_time_seconds": 62.3,
+  "n_models_trained": 4,
+  "n_errors": 0
+}
