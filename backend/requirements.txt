@@ -4,10 +4,12 @@ gunicorn
 python-multipart
 pydantic
 aiofiles
-openai
+sqlalchemy
+rdkit-pypi
 xgboost
 scikit-learn
-sqlalchemy
 pandas
 numpy
-rdkit
+joblib
+openai
+httpx

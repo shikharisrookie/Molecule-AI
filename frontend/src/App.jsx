@@ -8,6 +8,7 @@ import PredictionDashboard from './pages/PredictionDashboard';
 import VisualizationPage from './pages/VisualizationPage';
 import SimilarityPage from './pages/SimilarityPage';
 import ChatPage from './pages/ChatPage';
+import ModelPerformancePage from './pages/ModelPerformancePage';
 import AboutPage from './pages/AboutPage';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
               <Route path="/visualize" element={<VisualizationPage />} />
               <Route path="/similarity" element={<SimilarityPage />} />
               <Route path="/chat" element={<ChatPage />} />
+              <Route path="/models" element={<ModelPerformancePage />} />
               <Route path="/about" element={<AboutPage />} />
             </Routes>
           </main>

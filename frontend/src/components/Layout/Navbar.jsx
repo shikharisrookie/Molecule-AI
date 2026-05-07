@@ -10,6 +10,7 @@ const navLinks = [
   { to: '/visualize', label: '3D Viewer' },
   { to: '/similarity', label: 'Similarity' },
   { to: '/chat', label: 'AI Chat' },
+  { to: '/models', label: 'Models' },
   { to: '/about', label: 'About' },
 ];
 
